@@ -59,7 +59,8 @@ void Pop1() {
 //Pentru St
 void Push2(int x) {
 
-	if (top2 == MAX - 1){
+	if (top2 == MAX - 1)
+	{
 		printf("Eroare");
 		return;
 	}
@@ -117,35 +118,34 @@ void Adaugare_stive(int n) {
 
 }
 
-//Functia de comparare a 2 stive
-int Compar(int stiva1[], int stiva2[],int vf) {
-	int i, ok = 1;
-	for (i = 0; i <= vf; i++)
-		if (stiva1[i] != stiva2[i])
-			ok = 0;
-
-	return ok;
-}
-
 //Se imparte stiva binara, o jumatate se transfera in St, urmand compararea stivelor StB si St
 void Impartire_stiva(int StB[]) {
-      int i, j = 0, aux, ok = 1;
+      int j = 0, aux, ok = 1;
 	  
-	  aux = top1;
+	  //salvam varful stivei binare inainte de impartire
+	  aux = top1; 
 	
-	  while (j <= aux/2) {
-
+	  while (j <= aux/2) 
+	  {
 		  Push2(StB[top1]);
 		  Pop1();
 		  j++; 
 	  }
+	   
 
 //Caz particular: daca numarul de biti este impar, se elimina bitul din mijloc (este neimportant)
-	  if (top1 % 2 == 1)
+	  
+	  if (aux % 2 == 0)
 		  Pop2();
 
-	  if (!Compar(StB, St, top2))
-		  ok = 0;
+//Verificarea stivei binare
+	  while (top2 > -1) 
+	  {
+		  if (StB[top2] != St[top2])
+			  ok = 0;
+	      Pop1();
+	      Pop2();
+	  }
 
 	  j = 0;
 	  while (n) 
@@ -166,7 +166,7 @@ void Impartire_stiva(int StB[]) {
 
 int main() {
 
-	int ok = 1;
+	int ok = 1, good = 1;
 
 	//Citirea conditionata a numarului
 	do {
