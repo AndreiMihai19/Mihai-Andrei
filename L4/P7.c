@@ -166,7 +166,7 @@ void Impartire_stiva(int StB[]) {
 
 int main() {
 
-	int ok = 1, good = 1;
+	int ok = 1;
 
 	//Citirea conditionata a numarului
 	do {
