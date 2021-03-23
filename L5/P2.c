@@ -9,7 +9,8 @@ int St[MAXSt];
 int top = -1;
 int binar[8];
 
-void Push(int x) {
+void Push(int x) 
+{
 
 	if (top == MAXSt - 1)
 	{
@@ -21,7 +22,7 @@ void Push(int x) {
 }
 
 
-void initStack()
+void Init_St()
 {
 	int i = 0;
 	for (i = 0; i < MAXSt; i++)
@@ -41,13 +42,18 @@ void Zecimal_Binar(int x)
 
 }
 
-void Afisare_St() {
+
+void Afisare_St() 
+{
 	int i;
 
 	for (i = top; i >= 0; i--)
 	{
 		printf("%d ", St[i]);
 	}
+
+	if (top == DEFAULT)
+		printf("!!! Nu s-au gasit numere care indeplinesc conditia !!!");
 
 }
 
@@ -72,7 +78,7 @@ int main() {
 		Citire(V[i]);
 
 	new_line;
-	initStack();
+	Init_St();
 
 	for (i = 0; i < N; i++)
 		if (((V[i] >> C) & 1) == 1)
