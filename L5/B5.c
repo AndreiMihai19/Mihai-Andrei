@@ -46,7 +46,7 @@ void Push2(int x)
 //Afisarea stivelor (intr un mod aranjat)
 void Afisare_St()
 {
-	int i, aux, j = 0;
+	int i, aux, j = 0, baza = 1;
 	aux = top2;
 
 	printf("\t  Stiva 1      Stiva 2\n");
