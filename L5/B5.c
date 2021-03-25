@@ -43,30 +43,17 @@ void Push2(int x)
 	St2[++top2] = x;
 }
 
-int Numarare(int x)
-{
-	int aux, k=0;
-	aux = x;
-	while (aux)
-	{
-		k++;
-		aux--;
-	}
-
-	return k;
-}
-
 //Afisarea stivelor (intr un mod aranjat)
 void Afisare_St()
 {
-	int i, aux, j = 0, baza = 1;
+	int i, aux, j = 0;
 	aux = top2;
 
 	printf("\t  Stiva 1      Stiva 2\n");
 
 	for (i = 0; i <= top1; i++)
 	{   
-		    printf("\t  | %d\t| ", St1[i]);
+		printf("\t  | %d\t| ", St1[i]);
 
 		if (aux != -1)
 		{   
