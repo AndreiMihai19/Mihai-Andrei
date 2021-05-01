@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #define Citire(x) scanf("%d",&x)
 #define new_line printf("\n")
+
 int N;
 
 void Secventa(int N)
